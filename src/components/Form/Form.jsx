@@ -43,7 +43,10 @@ export const Form = ({ setCloseForm }) => {
                     {form.questions.map((question) => (
                         <FormInput key={question.id} {...question} />
                     ))}
-                    <button type="submit" className="rounded-sm p-3">
+                    <button
+                        type="submit"
+                        className="p-1 border-1 mt-2 text-white border-gray-400 bg-slate-500 rounded-md "
+                    >
                         Crear
                     </button>
                 </form>
@@ -58,7 +61,7 @@ function FormInput({ id, label, type, validations }) {
         <div className="grid gap-1">
             <label htmlFor={id}>{label}</label>
             <input
-                className="rounded-sm"
+                className=" border-gray-400 border-2 p-2 rounded-md"
                 type={type}
                 id={id}
                 {...register(id, validations)}
@@ -82,7 +85,7 @@ function ErrorMessage({ errors }) {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="text-red-400 font-bold"
+                    className="text-red-400 font-bold text-xs"
                 >
                     {errors?.message}
                 </motion.p>
