@@ -2,8 +2,9 @@ import React from "react";
 import { IconButton } from "./IconButton";
 import check from "../assets/check.svg";
 import cross from "../assets/cross.svg";
+import { useState } from "react";
 
-export const Tarea = ({ nombre, setTareas, tareas }) => {
+export const Tarea = ({ id, nombre, setTareas, tareas }) => {
   const [checked, setChecked] = useState("");
   const handleCheck = () => {
     console.log("check");
@@ -11,6 +12,7 @@ export const Tarea = ({ nombre, setTareas, tareas }) => {
   };
   const handleCross = () => {
     console.log("cross");
+    setTareas(tareas.filter((tarea) =>  tarea.id !== id))
   };
   return (
     <div className="flex flex-row justify-around align-middle w-22 my-auto rounded-md border-2 border-solid border-gray-400 p-10">
