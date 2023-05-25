@@ -25,7 +25,7 @@ export const Tareas = () => {
                 {tareas.map((tarea) => {
                     return (
                         <Tarea
-                            nombre={tarea.nombre}
+                            {...tarea}
                             setTareas={setTareas}
                             tareas={tareas}
                         />
@@ -37,7 +37,7 @@ export const Tareas = () => {
             </div>
             {showModal && (
                 <Modal setModal={setShowModal} title={"Nueva Tarea"}>
-                    <Form setCloseForm={setShowModal} />
+                    <Form setCloseForm={setShowModal} setNewItem={setTareas}/>
                 </Modal>
             )}
         </>
