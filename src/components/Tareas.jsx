@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import { IconButton } from "./IconButton";
 import plus from "../assets/add.svg";
+import {Tarea} from './Tarea'
+import { Modal } from "./Modal/Modal";
+import { Form } from "./Form/Form";
+
 
 export const Tareas = () => {
   const [tareas, setTareas] = useState([]);
+  const [showModal,setShowModal] = useState(false);
+
+  const addTarea = () => {
+    setShowModal(true)
+  }
+
   return (
     <>
       <div className="flex flex-col items-center h-screen p-10">
@@ -13,8 +23,13 @@ export const Tareas = () => {
         })}
       </div>
       <div className="absolute right-3 bottom-3 w-10 h-10">
-        <IconButton src={plus} onClick={() => console.log("plus")} />
+        <IconButton src={plus} onClick={addTarea} />
       </div>
+      {showModal && (
+        <Modal setModal={setShowModal} title={'Nueva Tarea'}>
+          <Form setCloseForm={setShowModal}/>
+        </Modal>
+      )}
     </>
   );
 };
