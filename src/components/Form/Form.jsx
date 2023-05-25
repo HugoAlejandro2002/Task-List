@@ -23,7 +23,7 @@ const form = {
     ],
 };
 
-export const Form = ({ setCloseForm }) => {
+export const Form = ({ setCloseForm, setNewItem }) => {
     const {
         register,
         handleSubmit,
@@ -33,7 +33,10 @@ export const Form = ({ setCloseForm }) => {
 
     function onSubmit(data) {
         setCloseForm(false);
-        console.log(data);
+        setNewItem((items) => [
+            ...items,
+            { ...data, id: `${data?.nombre}${items?.length + 1}` },
+        ]);
     }
 
     return (
