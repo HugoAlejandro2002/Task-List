@@ -23,6 +23,7 @@ export const Tareas = () => {
                             {...tarea}
                             setTareas={setTareas}
                             tareas={tareas}
+                            key={tarea.id}
                         />
                     );
                 })}
