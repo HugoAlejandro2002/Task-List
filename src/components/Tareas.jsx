@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { IconButton } from "./IconButton";
 import plus from "../assets/add.svg";
 import { Tarea } from "./Tarea";
-import {Tarea} from './Tarea'
 import { Modal } from "./Modal/Modal";
 import { Form } from "./Form/Form";
 
