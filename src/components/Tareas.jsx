@@ -4,8 +4,10 @@ import plus from "../assets/add.svg";
 import { Tarea } from "./Tarea";
 import { Modal } from "./Modal/Modal";
 import { Form } from "./Form/Form";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export const Tareas = () => {
+    const [parent, enableAutoAnimate] = useAutoAnimate();
     const [tareas, setTareas] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
@@ -15,7 +17,10 @@ export const Tareas = () => {
 
     return (
         <>
-            <div className="flex flex-col items-center h-screen p-10">
+            <div
+                className="flex flex-col items-center h-screen p-10"
+                ref={parent}
+            >
                 <span className="text-3xl font-bold">Tareas</span>
                 {tareas.map((tarea) => {
                     return (
