@@ -7,7 +7,7 @@ export const Tareas = () => {
   return (
     <>
       <div className="flex flex-col items-center h-screen p-10">
-        Tareas
+        <span className="text-3xl font-bold">Tareas</span>
         {tareas.map((tarea) => {
           return <Tarea tarea={tarea} />;
         })}
