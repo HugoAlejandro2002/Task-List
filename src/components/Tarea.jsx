@@ -6,7 +6,7 @@ import cross from '../assets/cross.svg'
 
 export const Tarea = () => {
     return (
-        <div className='flex flex-row justify-around align-middle w-22 my-auto rounded-md border-2 border-solid border-gray-400'>
+        <div className='flex flex-row justify-around align-middle w-22 my-auto rounded-md border-2 border-solid border-gray-400 p-10'>
             <div>
                 Tarea 1
             </div>
