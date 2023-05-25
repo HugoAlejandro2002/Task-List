@@ -1,12 +1,10 @@
 import "./App.css";
-import { IconButton } from "./components/IconButton";
-import AddImg from "./assets/add.svg"
-import { Tarea } from "./components/tarea";
+import { Tareas } from "./components/Tareas";
 
 function App() {
   return (
     <>
-      <Tarea/>
+      <Tareas />
     </>
   );
 }
