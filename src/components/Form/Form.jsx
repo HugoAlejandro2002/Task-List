@@ -23,7 +23,7 @@ const form = {
     ],
 };
 
-export const Form = () => {
+export const Form = ({ setCloseForm }) => {
     const {
         register,
         handleSubmit,
@@ -32,6 +32,7 @@ export const Form = () => {
     } = useForm();
 
     function onSubmit(data) {
+        setCloseForm(false);
         console.log(data);
     }
 
@@ -42,6 +43,9 @@ export const Form = () => {
                     {form.questions.map((question) => (
                         <FormInput key={question.id} {...question} />
                     ))}
+                    <button type="submit" className="rounded-sm p-3">
+                        Crear
+                    </button>
                 </form>
             </FormProvider>
         </div>
