@@ -1,16 +1,19 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { Form } from "./components/Form/Form";
+import { IconButton } from "./components/IconButton";
+import AddImg from "./assets/add.svg";
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
-        <main className="container mx-auto bg-slate-400 grid gap-2 p-3">
-            <Form />
-        </main>
+        <>
+            <div className="absolute right-3 bottom-3 w-10 h-10">
+                <IconButton
+                    src={AddImg}
+                    onClick={() => {
+                        console.log("Add Tarea");
+                    }}
+                />
+            </div>
+        </>
     );
 }
 
